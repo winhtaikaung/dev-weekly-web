@@ -55,24 +55,31 @@
     "karma-sourcemap-loader": "^0.3.7",
     "karma-webpack": "^1.7.0",
     "mocha": "^3.0.0",
+    "node-sass": "^3.7.0",
     "null-loader": "^0.1.1",
     "phantomjs-prebuilt": "^2.1.7",
     "react-addons-test-utils": "^15.0.1",
+    "redux-logger": "^3.0.6",
     "rimraf": "^2.5.2",
+    "sass-loader": "^3.2.0",
     "sinon": "^1.17.3",
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",
-    "webpack-dev-server": "^2.1.0-beta",
-    "sass-loader": "^3.2.0",
-    "node-sass": "^3.7.0"
+    "webpack-dev-server": "^2.1.0-beta"
   },
   "dependencies": {
+    "axios": "^0.17.1",
     "cross-env": "^3.1.0",
+    "prop-types": "^15.6.0",
     "react": "^15.0.1",
     "react-dom": "^15.0.1",
     "react-hot-loader": "^3.0.0-beta.6",
     "react-redux": "^5.0.6",
+    "react-router": "^4.2.0",
+    "react-router-redux": "^4.0.8",
+    "react-tap-event-plugin": "^3.0.2",
     "redux": "^3.7.2",
+    "redux-thunk": "^2.2.0",
     "webpack": "^2.1.0-beta.6"
   }
 }
