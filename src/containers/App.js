@@ -4,19 +4,17 @@
  *          This modifications only run once when the generator is invoked - if
  *          you edit them, they are not updated again.
  */
-import React, {
-  Component,
-  PropTypes
-} from 'react';
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
+import React, {Component} from 'react';
+import PropTypes from 'prop-types';
+import {bindActionCreators} from 'redux';
+import {connect} from 'react-redux';
 import {} from '../actions/';
 import Main from '../components/App';
 /* Populated by react-webpack-redux:reducer */
 class App extends Component {
   render() {
-    const { actions } = this.props;
-    return <Main actions={actions} />;
+    const {actions} = this.props;
+    return <Main actions={actions}/>;
   }
 }
 /* Populated by react-webpack-redux:reducer
@@ -35,7 +33,9 @@ function mapStateToProps(state) { // eslint-disable-line no-unused-vars
 function mapDispatchToProps(dispatch) {
   /* Populated by react-webpack-redux:action */
   const actions = {};
-  const actionMap = { actions: bindActionCreators(actions, dispatch) };
+  const actionMap = {
+    actions: bindActionCreators(actions, dispatch)
+  };
   return actionMap;
 }
 export default connect(mapStateToProps, mapDispatchToProps)(App);

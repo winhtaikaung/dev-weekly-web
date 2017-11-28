@@ -1,32 +1,35 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { AppContainer } from 'react-hot-loader';
-import { Provider } from 'react-redux';
+import {AppContainer} from 'react-hot-loader';
+import injectTapEventPlugin from 'react-tap-event-plugin';
+import {Provider} from 'react-redux';
+import {browserHistory} from 'react-router';
+import {syncHistoryWithStore} from 'react-router-redux';
 import App from './containers/App';
 import configureStore from './stores';
 
-const store = configureStore();
+// injectTapEventPlugin();
+const initialState = window.__INITIAL_STATE__;
+const store = configureStore(initialState, browserHistory);
 
 ReactDOM.render(
   <AppContainer>
-    <Provider store={store}>
-      <App />
-    </Provider>
-  </AppContainer>,
-  document.getElementById('app')
-);
+  <Provider store={store}>
+    <App/>
+  </Provider>
+</AppContainer>, document.getElementById('app'));
 
 if (module.hot) {
-  module.hot.accept('./containers/App', () => {
-    const NextApp = require('./containers/App').default; // eslint-disable-line global-require
+  module
+    .hot
+    .accept('./containers/App', () => {
+      const NextApp = require('./containers/App').default; // eslint-disable-line global-require
 
-    ReactDOM.render(
-      <AppContainer>
+      ReactDOM.render(
+        <AppContainer>
         <Provider store={store}>
-          <NextApp />
+          <NextApp/>
         </Provider>
-      </AppContainer>,
-      document.getElementById('app')
-    );
-  });
+      </AppContainer>, document.getElementById('app'));
+    });
 }

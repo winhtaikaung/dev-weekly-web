@@ -10,9 +10,12 @@
 /* Populated by react-webpack-redux:reducer */
 import {combineReducers} from 'redux';
 import {routerReducer} from 'react-router-redux';
+import ScratchCardReducer from '../reducers/ScratchCardReducer'
 
 const reducers = {
-    routing: routerReducer
+    routing: routerReducer,
+    ScratchCardReducer
+
 };
 const combined = combineReducers(reducers);
 module.exports = combined;
