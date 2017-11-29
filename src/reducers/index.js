@@ -10,7 +10,7 @@
 /* Populated by react-webpack-redux:reducer */
 import {combineReducers} from 'redux';
 import {routerReducer} from 'react-router-redux';
-import ScratchCardReducer from '../reducers/ScratchCardReducer'
+import ScratchCardReducer from '../containers/scratchcard/reducer/ScratchCardReducer'
 
 const reducers = {
     routing: routerReducer,

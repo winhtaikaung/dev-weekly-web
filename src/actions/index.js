@@ -7,7 +7,7 @@ import {action1, action2} from '../actions/'
 */
 /* Populated by react-webpack-redux:action */
 
-import {getScratchCard} from '../actions/ScratchCardAction'
+import {getScratchCard} from '../containers/scratchcard/actions/ScratchCardAction'
 const actions = {
     getScratchCard
 };
