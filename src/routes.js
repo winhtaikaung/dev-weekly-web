@@ -7,7 +7,7 @@ import {Router, Route, IndexRedirect} from 'react-router';
 export default(history) => (
     <Router history={history}>
         <Route path="/" component={App}>
-            <IndexRedirect to="/home"/>
+            <IndexRedirect to="/scratchcard"/>
             <Route path="home" component = {AppComponent}/>
             <Route path="scratchcard" component={ScratchCard}/>
         </Route>
