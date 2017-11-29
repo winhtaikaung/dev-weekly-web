@@ -12,9 +12,19 @@ import {} from '../actions/';
 import Main from '../components/App';
 /* Populated by react-webpack-redux:reducer */
 class App extends Component {
+
+  constructor(props, context) {
+    super(props);
+  }
+
   render() {
     const {actions} = this.props;
-    return <Main actions={actions}/>;
+    // return <Main actions={actions}/>;
+    return (
+      <div>
+        {this.props.children}
+      </div>
+    );
   }
 }
 /* Populated by react-webpack-redux:reducer
@@ -24,6 +34,10 @@ class App extends Component {
  */
 App.propTypes = {
   actions: PropTypes.shape({})
+};
+
+App.contextTypes = {
+  router: React.PropTypes.object.isRequired
 };
 function mapStateToProps(state) { // eslint-disable-line no-unused-vars
   /* Populated by react-webpack-redux:reducer */
