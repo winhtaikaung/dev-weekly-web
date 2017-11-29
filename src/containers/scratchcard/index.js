@@ -31,7 +31,7 @@ class ScratchCardContainer extends React.Component {
                     Congratulations! You WON!
                     <Link to={`/home`} className="button pill white">Back Home</Link>
                 </ScratchCard>
-                
+
             </div>
         );
     }

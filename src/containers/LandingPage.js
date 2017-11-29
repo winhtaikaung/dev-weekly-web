@@ -6,7 +6,8 @@ export default class LandingPage extends React.Component {
 
         return (
             <div>
-                {this.props.children}
+
+                    {this.props.children}
             </div>
         )
     }

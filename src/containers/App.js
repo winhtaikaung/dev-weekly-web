@@ -10,6 +10,7 @@ import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 import {} from '../actions/';
 import Main from '../components/App';
+import {Link} from 'react-router';
 /* Populated by react-webpack-redux:reducer */
 class App extends Component {
 
@@ -22,7 +23,10 @@ class App extends Component {
     // return <Main actions={actions}/>;
     return (
       <div>
-        {this.props.children}
+            <div></div>
+        <div>
+          {this.props.children}
+        </div>
       </div>
     );
   }
