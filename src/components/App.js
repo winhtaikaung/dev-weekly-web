@@ -1,7 +1,7 @@
 import React from 'react';
 import YeomanImage from './YeomanImage';
 import './app.css';
-
+import '../scss/main.scss';
 class AppComponent extends React.Component {
 
   render() {
