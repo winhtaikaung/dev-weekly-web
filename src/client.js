@@ -8,7 +8,7 @@ import {syncHistoryWithStore} from 'react-router-redux';
 import App from './containers/App';
 import configureStore from './stores';
 
-// injectTapEventPlugin();
+injectTapEventPlugin();
 const initialState = window.__INITIAL_STATE__;
 const store = configureStore(initialState, browserHistory);
 

@@ -7,13 +7,16 @@ import reducers from '../reducers';
 import api from '../middleware/api';
 
 function reduxStore(initialState = {}, history) {
-  let middleware;
+  let middleware = [thunk, api, routerMiddleware(history)];
 
   if (process.env.NODE_ENV === "production") {
-    middleware = [thunk, api, routerMiddleware(history)];
+    middleware = [...middleware];
 
   } else {
-    middleware = [thunk, api, routerMiddleware(history), createLogger()];
+    middleware = [
+      ...middleware,
+      createLogger()
+    ];
   }
 
   // if (module.hot) {   // Enable Webpack hot module replacement for reducers
@@ -25,7 +28,7 @@ function reduxStore(initialState = {}, history) {
   let finalCreateStore;
   finalCreateStore = compose(applyMiddleware(...middleware))(createStore);
 
-  return finalCreateStore(reducers, initialState, window.devToolsExtension && window.devToolsExtension());
+  return finalCreateStore(reducers, initialState);
   // const store = createStore(reducers, initialState, window.devToolsExtension &&
   // window.devToolsExtension()); return store;
 }
