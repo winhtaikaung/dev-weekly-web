@@ -11,7 +11,7 @@ import {connect} from 'react-redux';
 import {} from '../actions/';
 import Main from '../components/App';
 import {Link} from 'react-router';
-/* Populated by react-webpack-redux:reducer */
+/* Populated by react-webpack-redux:reducers */
 class App extends Component {
 
   constructor(props, context) {
@@ -31,9 +31,9 @@ class App extends Component {
     );
   }
 }
-/* Populated by react-webpack-redux:reducer
+/* Populated by react-webpack-redux:reducers
  *
- * HINT: if you adjust the initial type of your reducer, you will also have to
+ * HINT: if you adjust the initial type of your reducers, you will also have to
  *       adjust it here.
  */
 App.propTypes = {
@@ -44,7 +44,7 @@ App.contextTypes = {
   router: React.PropTypes.object.isRequired
 };
 function mapStateToProps(state) { // eslint-disable-line no-unused-vars
-  /* Populated by react-webpack-redux:reducer */
+  /* Populated by react-webpack-redux:reducers */
   const props = {};
   return props;
 }

@@ -5,7 +5,7 @@ import _ from 'lodash';
 // normalizes the result JSON according to schema. This makes every API response
 // have the same shape, regardless of how nested it was.
 function callApi(endpoint, method, params, headers, formdata) {
-    const API_ROOT = "http://api.twitter.com";
+    const API_ROOT = "http://localhost:3000/";
     const url = API_ROOT + endpoint;
 
     let query = {
