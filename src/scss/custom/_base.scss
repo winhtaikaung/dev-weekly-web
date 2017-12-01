@@ -1,0 +1,26 @@
+body{
+    margin:0 auto;
+    overflow: scroll;
+    position: relative;
+    @include breakpoint(large xlarge) {
+        background:$jet;
+    } 
+}
+
+#app{
+    background:$mid-gray;
+    height:100%;
+    @include breakpoint(large xlarge) {
+        margin:0 auto;
+        width:30%;
+    }
+}
+
+//Custom components here
+@import 'components/bottomnavbar';
+
+
+    
+
+
+
