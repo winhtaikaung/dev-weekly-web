@@ -6,14 +6,14 @@
  */
 
 // Dependencies
-// @import '../_vendor/normalize-scss/sass/normalize';
-// @import '../_vendor/sassy-lists/stylesheets/helpers/missing-dependencies';
-// @import '../_vendor/sassy-lists/stylesheets/helpers/true';
-// @import '../_vendor/sassy-lists/stylesheets/functions/contain';
-// @import '../_vendor/sassy-lists/stylesheets/functions/purge';
-// @import '../_vendor/sassy-lists/stylesheets/functions/remove';
-// @import '../_vendor/sassy-lists/stylesheets/functions/replace';
-// @import '../_vendor/sassy-lists/stylesheets/functions/to-list';
+@import '_vendor/normalize-scss/sass/normalize';
+@import '_vendor/sassy-lists/stylesheets/helpers/missing-dependencies';
+@import '_vendor/sassy-lists/stylesheets/helpers/true';
+@import '_vendor/sassy-lists/stylesheets/functions/contain';
+@import '_vendor/sassy-lists/stylesheets/functions/purge';
+@import '_vendor/sassy-lists/stylesheets/functions/remove';
+@import '_vendor/sassy-lists/stylesheets/functions/replace';
+@import '_vendor/sassy-lists/stylesheets/functions/to-list';
 
 // Settings
 // import your own `settings` here or
@@ -64,8 +64,14 @@
 @import 'components/title-bar';
 @import 'components/top-bar';
 @import 'components/thumbnail';
+
+
 @import 'components/tooltip';
 @import 'prototype/prototype';
+@import 'common/settings';
+
+
+
 
 @mixin foundation-everything(
   $flex: true,
@@ -122,6 +128,7 @@
   @include foundation-top-bar;
   @include foundation-visibility-classes;
   @include foundation-float-classes;
+  @include top-bar-container;
 
   @if $flex {
     @include foundation-flex-classes;
@@ -131,3 +138,5 @@
     @include foundation-prototype-classes;
   }
 }
+
+@include foundation-everything;
