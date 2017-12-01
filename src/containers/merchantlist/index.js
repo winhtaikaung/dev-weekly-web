@@ -2,6 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux'
 import {getmerchantList} from '../merchantlist/actions/MerchantListAction'
+import CatalogueItem from '../../components/CatalogueItem'
 
 export class MerchantList extends React.Component {
     constructor(props) {
@@ -15,7 +16,9 @@ export class MerchantList extends React.Component {
     }
 
     componentWillMount() {
-        this.props.getmerchantList(1, 10);
+        this
+            .props
+            .getmerchantList(1, 10);
     }
 
     componentWillReceiveProps(newProps) {
@@ -24,8 +27,13 @@ export class MerchantList extends React.Component {
 
     render() {
         return (
-            <div>
-                This is Merchant List
+            <div className="row">
+                {this.state.items && this
+                    .state
+                    .items
+                    .map((item, index) => <CatalogueItem/>)
+}
+
             </div>
         );
     }

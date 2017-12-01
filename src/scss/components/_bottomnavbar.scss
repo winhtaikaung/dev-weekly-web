@@ -6,6 +6,11 @@
     background: $primary-color;
     display: flex;
     justify-content: center;
+    @include breakpoint(large xlarge) {
+      width:30%;
+    }
+    bottom:0;
+    position: fixed;
     align-items: center;
   
   
