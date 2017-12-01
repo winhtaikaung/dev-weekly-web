@@ -11,6 +11,8 @@ import {connect} from 'react-redux';
 import {} from '../actions/';
 import Main from '../components/App';
 import {Link} from 'react-router';
+import BottomNavBar from '../components/BottomNavBar'
+import TopMenuBar from '../components/TopMenuBar'
 /* Populated by react-webpack-redux:reducers */
 class App extends Component {
 
@@ -23,10 +25,11 @@ class App extends Component {
     // return <Main actions={actions}/>;
     return (
       <div>
-            <div></div>
+        <TopMenuBar/>
         <div>
           {this.props.children}
         </div>
+        <BottomNavBar navItems={[1, 2]}/>
       </div>
     );
   }
