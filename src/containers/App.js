@@ -18,6 +18,12 @@ class App extends Component {
 
   constructor(props, context) {
     super(props);
+    this.state={
+      navitems:[
+        {icon:"http://iconfinder.com/q=demo",text:"My rewards"},
+        {icon:"http://iconfinder.com/q=demo",text:"My Cards"},
+      ]
+    }
   }
 
   render() {
@@ -29,7 +35,7 @@ class App extends Component {
         <div>
           {this.props.children}
         </div>
-        <BottomNavBar navItems={[1, 2]}/>
+        <BottomNavBar navItems={this.state.navitems}/>
       </div>
     );
   }

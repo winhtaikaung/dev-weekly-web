@@ -10,7 +10,7 @@ const BottomNavbar = (props) => {
                 .navItems
                 .map((item, index) => <Link key={index} to={`/`} className="footer-link">
                     <i className="fa fa-cog"></i>
-                    <span className='footer-text'>Settings</span>
+                    <span className='footer-text'>{item.text}</span>
                 </Link>)
             }
 
