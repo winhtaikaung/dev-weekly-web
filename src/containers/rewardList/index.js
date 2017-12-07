@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux'
-import {getmerchantList} from '../merchantlist/actions/MerchantListAction'
+import {getmerchantList} from '../rewardList/actions/RewardListAction'
 import CatalogueItem from '../../components/CatalogueItem'
 
 export class RewardList extends React.Component {
@@ -29,7 +29,7 @@ export class RewardList extends React.Component {
         const windowBottom = windowHeight + window.pageYOffset;
 
         // Detect When User Scrolls To Bottom of Page
-        if (windowBottom >= docHeight / 3) {
+        if (windowBottom >= docHeight) {
             this
                 .props
                 .getmerchantList(this.state.paging.next_page, this.state.fetchLimit);

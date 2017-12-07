@@ -11,7 +11,7 @@
 import {combineReducers} from 'redux';
 import {routerReducer} from 'react-router-redux';
 import ScratchCardReducer from '../containers/scratchcard/reducers/ScratchCardReducer'
-import MerchantListReducer from '../containers/merchantlist/reducers/MerchantListReducer'
+import MerchantListReducer from '../containers/rewardList/reducers/RewardListReducer'
 
 const reducers = {
     routing: routerReducer,

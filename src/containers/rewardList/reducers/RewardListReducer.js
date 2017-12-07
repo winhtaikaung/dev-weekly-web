@@ -6,7 +6,7 @@ const initialState = {
     error: {}
 };
 
-export default function merchantListReducer(state = initialState, action) {
+export default function rewardListReducer(state = initialState, action) {
     switch (action.type) {
         case GET_MERCHANT_LIST_REQUEST:
             return Object.assign({}, state, {
