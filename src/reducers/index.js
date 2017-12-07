@@ -12,11 +12,13 @@ import {combineReducers} from 'redux';
 import {routerReducer} from 'react-router-redux';
 import ScratchCardReducer from '../containers/scratchcard/reducers/ScratchCardReducer'
 import MerchantListReducer from '../containers/rewardList/reducers/RewardListReducer'
+import MyCardListReducer from '../containers/mycardList/reducers/MyCardListReducer'
 
 const reducers = {
     routing: routerReducer,
     ScratchCardReducer,
-    MerchantListReducer
+    MerchantListReducer,
+    MyCardListReducer
 
 };
 const combined = combineReducers(reducers);

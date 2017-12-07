@@ -8,11 +8,13 @@ body{
 }
 
 #app{
-    background:$mid-gray;
+    background:$lighter-gray;
     height:100%;
     @include breakpoint(large xlarge) {
         margin:0 auto;
         width:30%;
+    }
+    #base-container{
     }
     
 }
@@ -23,6 +25,11 @@ body{
     } 
     top:0;
     position: fixed;
+}
+
+.view-container{
+    margin-top:rem-calc(35);
+    padding-top:rem-calc(35);
 }
 @include foundation-flex-classes;
 @include foundation-flex-grid;
