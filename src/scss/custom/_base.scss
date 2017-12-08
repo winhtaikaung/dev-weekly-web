@@ -4,18 +4,21 @@ body{
     position: relative;
     @include breakpoint(large xlarge) {
         background:$jet;
-    } 
+    }
+    height: 100%; 
+}
+html{
+    height: 100%;
 }
 
 #app{
     background:$lighter-gray;
-    height:100%;
     @include breakpoint(large xlarge) {
         margin:0 auto;
         width:30%;
     }
-    #base-container{
-    }
+    min-height: 100%;
+    height: auto;
     
 }
 .title-bar{

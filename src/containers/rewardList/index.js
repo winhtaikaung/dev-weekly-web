@@ -48,7 +48,7 @@ export class RewardList extends React.Component {
 
     componentWillReceiveProps(newProps) {
 
-        if (this.state.items) {
+        if (newProps.items.length != 0 && newProps.paging.next_page) {
 
             this.setState({
                 items: [
