@@ -18,10 +18,17 @@ class App extends Component {
 
   constructor(props, context) {
     super(props);
-    this.state={
-      navitems:[
-        {icon:"http://iconfinder.com/q=demo",text:"My rewards"},
-        {icon:"http://iconfinder.com/q=demo",text:"My Cards"},
+    this.state = {
+      navitems: [
+        {
+          linkTo: "rewards",
+          icon: "http://iconfinder.com/q=demo",
+          text: "My rewards"
+        }, {
+          linkTo: "mycards",
+          icon: "http://iconfinder.com/q=demo",
+          text: "My Cards"
+        }
       ]
     }
   }
@@ -30,9 +37,9 @@ class App extends Component {
     const {actions} = this.props;
     // return <Main actions={actions}/>;
     return (
-      <div>
+      <div id="base-container">
         <TopMenuBar/>
-        <div>
+        <div className="view-container">
           {this.props.children}
         </div>
         <BottomNavBar navItems={this.state.navitems}/>

@@ -7,7 +7,6 @@ import CatalogueItem from '../../components/CatalogueItem'
 export class RewardList extends React.Component {
     constructor(props) {
         super(props);
-
         this.state = {
 
             fetchLimit: 10,
@@ -49,7 +48,7 @@ export class RewardList extends React.Component {
 
     componentWillReceiveProps(newProps) {
 
-        if (this.state.items) {
+        if (newProps.items.length != 0 && newProps.paging.next_page) {
 
             this.setState({
                 items: [
@@ -77,7 +76,9 @@ export class RewardList extends React.Component {
                 );
             } else {
                 return (
-                    <div className="row"> No Items Found</div>
+                    <div className="row">
+                        No Items Found
+                    </div>
                 )
             }
         }
