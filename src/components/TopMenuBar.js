@@ -13,7 +13,11 @@ const TopMenuBar = (props) => {
                 ? true
                 : false)}
                 data-toggle="responsive-menu"></button>
-            <div className="title-bar-title">Menu</div>
+            <div
+                className="title-bar-title"
+                onClick={() => props.onNavClick(!props.isDrawerClose
+                ? true
+                : false)}>Menu</div>
         </div>
     );
 };

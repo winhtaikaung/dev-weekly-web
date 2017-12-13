@@ -15,7 +15,7 @@ html{
     background:$lighter-gray;
     @include breakpoint(large xlarge) {
         margin:0 auto;
-        width:30%;
+        width:50%;
     }
     min-height: 100%;
     height: auto;
@@ -24,10 +24,19 @@ html{
 .title-bar{
     width:100%;
     @include breakpoint(large xlarge) {
-        width:30%;
+        width:50%;
     } 
     top:0;
     position: fixed;
+}
+
+.position-left{
+    @include breakpoint(large xlarge){
+        width:50%;
+        margin: 0 25%; 
+        height: 250px;
+        transform: translateY(-250px);
+    }
 }
 
 .view-container{

@@ -13,13 +13,14 @@ import Main from '../components/App';
 import {Link} from 'react-router';
 import BottomNavBar from '../components/BottomNavBar'
 import TopMenuBar from '../components/TopMenuBar'
+import NavDrawer from '../components/NavDrawer'
 /* Populated by react-webpack-redux:reducers */
 class App extends Component {
 
   constructor(props, context) {
     super(props);
     this.state = {
-      navitems: [
+      bottomNavitems: [
         {
           linkTo: "rewards",
           icon: "http://iconfinder.com/q=demo",
@@ -30,12 +31,35 @@ class App extends Component {
           text: "My Cards"
         }
       ],
-      is_drawer_open:false 
+      navDrawerItems: [
+        {
+          icon: "http://iconfinder.com/q=demo",
+          text: "User Profile"
+        }, {
+          icon: "http://iconfinder.com/q=demo",
+          text: "Link Rapid KL"
+        }, {
+          icon: "http://iconfinder.com/q=demo",
+          text: "PromoCode"
+        }, {
+          icon: "http://iconfinder.com/q=demo",
+          text: "Contact us"
+        }, {
+          icon: "http://iconfinder.com/q=demo",
+          text: "Terms of Service"
+        }
+      ],
+      isDrawerOpen: false
     }
   }
 
-  onNavClick(drwerState) {
-    this.setState({is_drawer_open: drwerState})
+  onNavClick(drawerState) {
+    this.setState({isDrawerOpen: drawerState})
+  }
+
+  onNavItemClick(index, drawerState) {
+    this.setState({isDrawerOpen: drawerState})
+
   }
 
   render() {
@@ -44,31 +68,23 @@ class App extends Component {
     return (
       <div className="off-canvas-wrapper">
         <div id="base-container">
-          <div
-            className={`off-canvas position-left position-left is-transition-push`+`${!this.state.is_drawer_open?" is-close":" is-open"}`}
-            id="offCanvas"
-            data-off-canvas>
-            <ul>
-              <li>asdfasdf</li>
-              <li>asdfasdf</li>
-              <li>asdfasdf</li>
-              <li>asdfasdf</li>
-              <li>asdfasdf</li>
-            </ul>
-          </div>
+          <NavDrawer
+            isDrawerOpen={this.state.isDrawerOpen}
+            drawerItems={this.state.navDrawerItems}
+            onNavItemClick={this
+            .onNavItemClick
+            .bind(this)}/>
           <TopMenuBar
             onNavClick={this
             .onNavClick
             .bind(this)}
-            isDrawerClose={this.state.is_drawer_open}/>
+            isDrawerClose={this.state.isDrawerOpen}/>
           <div className="off-canvas-content" data-off-canvas-content>
-
             <div className="view-container">
               {this.props.children}
             </div>
-            <BottomNavBar navItems={this.state.navitems}/>
+            <BottomNavBar navItems={this.state.bottomNavitems}/>
           </div>
-
         </div>
       </div>
     );
