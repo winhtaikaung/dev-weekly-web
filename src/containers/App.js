@@ -14,6 +14,7 @@ import {Link} from 'react-router';
 import BottomNavBar from '../components/BottomNavBar'
 import TopMenuBar from '../components/TopMenuBar'
 import NavDrawer from '../components/NavDrawer'
+import ModalContainer from './modal/ModalContainer'
 /* Populated by react-webpack-redux:reducers */
 class App extends Component {
 
@@ -49,17 +50,19 @@ class App extends Component {
           text: "Terms of Service"
         }
       ],
-      isDrawerOpen: false
+      isDrawerOpen: false,
+      isModelOpen: false,
+      modelTitle: "",
+      modalDialoglIndex: 0
     }
   }
 
   onNavClick(drawerState) {
-    this.setState({isDrawerOpen: drawerState})
+    this.setState({isDrawerOpen: drawerState, isModelOpen: false})
   }
 
   onNavItemClick(index, drawerState) {
-    this.setState({isDrawerOpen: drawerState})
-
+    this.setState({isDrawerOpen: drawerState, isModelOpen: true, modelTitle: this.state.navDrawerItems[index].text, modalDialoglIndex: index})
   }
 
   render() {
@@ -85,6 +88,10 @@ class App extends Component {
             </div>
             <BottomNavBar navItems={this.state.bottomNavitems}/>
           </div>
+          <ModalContainer
+            isModalOpen={this.state.isModelOpen}
+            labelTitle={this.state.modelTitle}
+            modalDialoglIndex={this.state.modalDialoglIndex}/>
         </div>
       </div>
     );
