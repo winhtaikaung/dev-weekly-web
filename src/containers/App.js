@@ -29,20 +29,47 @@ class App extends Component {
           icon: "http://iconfinder.com/q=demo",
           text: "My Cards"
         }
-      ]
+      ],
+      is_drawer_open:false 
     }
+  }
+
+  onNavClick(drwerState) {
+    this.setState({is_drawer_open: drwerState})
   }
 
   render() {
     const {actions} = this.props;
     // return <Main actions={actions}/>;
     return (
-      <div id="base-container">
-        <TopMenuBar/>
-        <div className="view-container">
-          {this.props.children}
+      <div className="off-canvas-wrapper">
+        <div id="base-container">
+          <div
+            className={`off-canvas position-left position-left is-transition-push`+`${!this.state.is_drawer_open?" is-close":" is-open"}`}
+            id="offCanvas"
+            data-off-canvas>
+            <ul>
+              <li>asdfasdf</li>
+              <li>asdfasdf</li>
+              <li>asdfasdf</li>
+              <li>asdfasdf</li>
+              <li>asdfasdf</li>
+            </ul>
+          </div>
+          <TopMenuBar
+            onNavClick={this
+            .onNavClick
+            .bind(this)}
+            isDrawerClose={this.state.is_drawer_open}/>
+          <div className="off-canvas-content" data-off-canvas-content>
+
+            <div className="view-container">
+              {this.props.children}
+            </div>
+            <BottomNavBar navItems={this.state.navitems}/>
+          </div>
+
         </div>
-        <BottomNavBar navItems={this.state.navitems}/>
       </div>
     );
   }
