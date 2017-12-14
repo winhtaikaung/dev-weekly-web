@@ -1,12 +1,26 @@
 import React, {Component} from 'react';
 import LinkCardModal from '../../components/linkcard/LinkCardModal'
+import UserProfileModal from '../../components/userprofile/UserProfileModal'
 
 class ModalContainer extends Component {
 
     constructor(props) {
         super(props)
         this.state = {
-            modalStyle: {
+            linkCardModalStyle: {
+                overlay: {
+                    backgroundColor: 'rgba(4, 4, 4, 0.87)'
+                },
+                content: {
+                    top: '50%',
+                    left: '50%',
+                    right: 'auto',
+                    bottom: 'auto',
+                    marginRight: '-20%',
+                    transform: 'translate(-50%, -50%)'
+                }
+            },
+            userProfileModalStyle: {
                 overlay: {
                     backgroundColor: 'rgba(4, 4, 4, 0.87)'
                 },
@@ -33,7 +47,7 @@ class ModalContainer extends Component {
         switch (this.state.modalDialogIndex) {
             case 0:
                 return (
-                    <div>User Profile</div>
+                    <div>{this.returnUserProfileModal(this.props)}</div>
                 );
                 break;
             case 1:
@@ -88,7 +102,24 @@ class ModalContainer extends Component {
             onClickDismiss={this
             .onDismissDialog
             .bind(this)}
-            style={this.state.modalStyle}
+            style={this.state.linkCardModalStyle}
+            contentLabel={props.labelTitle}/>)
+    }
+
+
+    returnUserProfileModal(props) {
+        return (<UserProfileModal
+            isOpen={this.state.isModalOpen}
+            onAfterOpen={this
+            .onAfterModelOpened
+            .bind(this)}
+            onModelClose={this
+            .onModelClosed
+            .bind(this)}
+            onClickDismiss={this
+            .onDismissDialog
+            .bind(this)}
+            style={this.state.linkCardModalStyle}
             contentLabel={props.labelTitle}/>)
     }
 

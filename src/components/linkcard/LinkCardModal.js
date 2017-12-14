@@ -6,6 +6,7 @@ import {Form} from 'react-form';
 const LinkCardModal = (props) => {
     return (
         <Modal
+            
             isOpen={props.isOpen}
             ariaHideApp={false}
             onAfterOpen={() => props.onAfterOpen()}

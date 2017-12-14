@@ -31,7 +31,7 @@ html{
 }
 
 .position-left{
-    @include breakpoint(large xlarge){
+    @include breakpoint(large xlarge ){
         width:50%;
         margin: 0 25%; 
         height: 250px;
@@ -42,6 +42,37 @@ html{
 .view-container{
     margin-top:rem-calc(35);
     padding-top:rem-calc(35);
+}
+.dialog-modal{
+    position: absolute;
+    
+    top: 50%;
+    left: 50%;
+    right: auto;
+    bottom: auto;
+    border: 1px solid rgb(204, 204, 204);
+    background: rgb(255, 255, 255);
+    overflow: auto;
+    border-radius: 4px;
+    outline: none;
+    padding: 20px;
+    margin-right: -20%;
+    transform: translate(-50%, -50%);
+    @include breakpoint(small){
+        width:95%;
+    } 
+
+    @include breakpoint(medium){
+        width:55%
+    }
+
+    @include breakpoint(xlarge){
+        width:40%;
+    } 
+}
+
+.avatar{
+    border-radius: 50%;
 }
 @include foundation-flex-classes;
 @include foundation-flex-grid;
