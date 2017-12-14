@@ -38,7 +38,7 @@ class App extends Component {
           text: "User Profile"
         }, {
           icon: "http://iconfinder.com/q=demo",
-          text: "Link Rapid KL"
+          text: "Link Rapid KL Card"
         }, {
           icon: "http://iconfinder.com/q=demo",
           text: "PromoCode"
