@@ -34,10 +34,12 @@ html{
     @include breakpoint(large xlarge ){
         width:50%;
         margin: 0 25%; 
-        height: 250px;
-        transform: translateY(-250px);
+        height: 100%;
+        transform: translateY(-100%);
     }
 }
+
+
 
 .view-container{
     margin-top:rem-calc(35);
@@ -78,6 +80,7 @@ html{
 @include foundation-flex-grid;
 //Custom components here
 @import 'components/bottomnavbar';
+@import 'components/nav-drawer';
 
 
     

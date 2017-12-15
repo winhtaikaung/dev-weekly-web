@@ -79,15 +79,16 @@ class ModalContainer extends Component {
     }
 
     onAfterModelOpened(e) {
-        // console.log("Modal Opened");
+        document.body.style.overflow = "hidden";
     }
 
     onModelClosed(e) {
-        // console.log("model Closed");
+        document.body.style.overflow = "scroll";
     }
 
     onDismissDialog() {
         this.setState({isModalOpen: false})
+        document.body.style.overflow = "scroll";
     }
 
     returnLinkCardModal(props) {

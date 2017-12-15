@@ -1,22 +1,35 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import ProfileHeader from '../components/userprofile/ProfileHeader'
 
 const NavDrawer = (props) => {
     return (
-        <div
-            className={`off-canvas position-left is-transition-push` + `${ !props.isDrawerOpen
-            ? " is-close"
-            : " is-open"}`}
-            id="offCanvas"
-            data-off-canvas>
-            <ul className="vertical menu align-center">
-                {props.drawerItems && props
-                    .drawerItems
-                    .map((item, index) => <li key={index} onClick={() => props.onNavItemClick(index, !props.isDrawerOpen)}>
-                        <span >{item.text}</span>
-                    </li>)
+        <div>
+            <div
+           
+                className={`off-canvas mobile-ofc position-left is-transition-push ` + `${ !props.isDrawerOpen
+                ? "slide-out"
+                : "slide-in"}` }  onClick={()=>props.onOutCanvasClick(!props.isDrawerOpen)}
+                ></div>
+            <div
+                className={`off-canvas mobile-ofc position-left is-transition-push` + `${ !props.isDrawerOpen
+                ? " is-close"
+                : " is-open"}`}
+                id="offCanvas"
+                data-off-canvas>
+                <ProfileHeader/>
+                <ul className=" vertical menu align-left">
+                    {props.drawerItems && props
+                        .drawerItems
+                        .map((item, index) => <li
+                            key={index}
+                            onClick={() => props.onNavItemClick(index, !props.isDrawerOpen)}>
+                            <span >{item.text}</span>
+                        </li>)
 }
-            </ul>
+                </ul>
+            </div>
+
         </div>
 
     );

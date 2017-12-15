@@ -57,12 +57,30 @@ class App extends Component {
     }
   }
 
+  onOutCanvasClick(drawerState) {
+    
+    this.setState({isDrawerOpen: drawerState, isModelOpen: false})
+    this.disableBodyOverflow(true); 
+  }
+
   onNavClick(drawerState) {
     this.setState({isDrawerOpen: drawerState, isModelOpen: false})
+    this.disableBodyOverflow(false);
   }
 
   onNavItemClick(index, drawerState) {
     this.setState({isDrawerOpen: drawerState, isModelOpen: true, modelTitle: this.state.navDrawerItems[index].text, modalDialoglIndex: index})
+    this.disableBodyOverflow(true); 
+  }
+
+  componentWillReceiveProps(nextProps) {
+    this.setState({isModelOpen: false})
+  }
+
+  disableBodyOverflow(bodyOverFlow) {
+    document.body.style.overflow = bodyOverFlow
+      ? "scroll"
+      : "hidden";
   }
 
   render() {
@@ -74,6 +92,9 @@ class App extends Component {
           <NavDrawer
             isDrawerOpen={this.state.isDrawerOpen}
             drawerItems={this.state.navDrawerItems}
+            onOutCanvasClick={this
+            .onOutCanvasClick
+            .bind(this)}
             onNavItemClick={this
             .onNavItemClick
             .bind(this)}/>

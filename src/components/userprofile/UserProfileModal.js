@@ -2,11 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Modal from 'react-modal';
 import {Form} from 'react-form';
-
+import ProfileHeader from '../userprofile/ProfileHeader'
 const UserProfileModal = (props) => {
     return (
         <Modal
-            className="dialog-modal"
+            className="dialog-modal profile-modal"
             isOpen={props.isOpen}
             ariaHideApp={false}
             onAfterOpen={() => props.onAfterOpen()}
@@ -22,14 +22,7 @@ const UserProfileModal = (props) => {
                         'textAlign': 'center'
                     }}>{props.contentLabel}</h4>
                 </div>
-                <div className="grid-x grid-padding-x align-middle ">
-                    <div className="medium-5 small-6 large-6 cell">
-                        <img
-                            className="avatar"
-                            src="https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50"/>
-                    </div>
-                    <h5 className="medium-6 small-6 large-6 cell">John Doe</h5>
-                </div>
+                <ProfileHeader/>
                 <div className="grid-x grid-padding-x align-middle ">
                     <div className="medium-4 small-12 large-4 cell">
                         <span>Rapid Points</span>
@@ -60,6 +53,7 @@ const UserProfileModal = (props) => {
 
                     </div>
                     <fieldset className="medium-8 small-12 large-8 cell">
+
                         <input type="radio" name="pokemon" value="Male" id="pokemonRed" required/>
                         <label htmlFor="pokemonRed">Male</label>
                         <input type="radio" name="pokemon" value="Female" id="pokemonBlue"/>
