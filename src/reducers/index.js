@@ -8,18 +8,18 @@
  *          you edit them, they are not updated again.
  */
 /* Populated by react-webpack-redux:reducers */
-import {combineReducers} from 'redux';
-import {routerReducer} from 'react-router-redux';
-import ScratchCardReducer from '../containers/scratchcard/reducers/ScratchCardReducer'
-import MerchantListReducer from '../containers/rewardList/reducers/RewardListReducer'
-import MyCardListReducer from '../containers/mycardList/reducers/MyCardListReducer'
-
+import { combineReducers } from 'redux';
+import { routerReducer } from 'react-router-redux';
+import ScratchCardReducer from '../containers/scratchcard/reducers/ScratchCardReducer';
+import MerchantListReducer from '../containers/rewardList/reducers/RewardListReducer';
+import MyCardListReducer from '../containers/mycardList/reducers/MyCardListReducer';
+import { EmailLoginReducer } from '../containers/login/reducers/LoginReducer';
 const reducers = {
-    routing: routerReducer,
-    ScratchCardReducer,
-    MerchantListReducer,
-    MyCardListReducer
-
+  routing: routerReducer,
+  ScratchCardReducer,
+  MerchantListReducer,
+  MyCardListReducer,
+  EmailLoginReducer
 };
 const combined = combineReducers(reducers);
 module.exports = combined;

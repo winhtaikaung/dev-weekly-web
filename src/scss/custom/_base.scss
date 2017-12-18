@@ -79,8 +79,9 @@ html{
 @include foundation-flex-classes;
 @include foundation-flex-grid;
 //Custom components here
-@import 'components/bottomnavbar';
-@import 'components/nav-drawer';
+@import 'components/bottomnav/bottomnavbar';
+@import 'components/navdrawer/nav-drawer';
+@import 'components/login/login';
 
 
     
