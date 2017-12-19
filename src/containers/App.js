@@ -15,11 +15,12 @@ import BottomNavBar from '../components/BottomNavBar'
 import TopMenuBar from '../components/TopMenuBar'
 import NavDrawer from '../components/NavDrawer'
 import ModalContainer from './modal/ModalContainer'
+import Login from '../containers/login'
 /* Populated by react-webpack-redux:reducers */
 class App extends Component {
 
   constructor(props, context) {
-    super(props);
+    super(props, context);
     this.state = {
       bottomNavitems: [
         {
@@ -55,12 +56,13 @@ class App extends Component {
       modelTitle: "",
       modalDialoglIndex: 0
     }
+
   }
 
   onOutCanvasClick(drawerState) {
-    
+
     this.setState({isDrawerOpen: drawerState, isModelOpen: false})
-    this.disableBodyOverflow(true); 
+    this.disableBodyOverflow(true);
   }
 
   onNavClick(drawerState) {
@@ -70,7 +72,7 @@ class App extends Component {
 
   onNavItemClick(index, drawerState) {
     this.setState({isDrawerOpen: drawerState, isModelOpen: true, modelTitle: this.state.navDrawerItems[index].text, modalDialoglIndex: index})
-    this.disableBodyOverflow(true); 
+    this.disableBodyOverflow(true);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -86,6 +88,16 @@ class App extends Component {
   render() {
     const {actions} = this.props;
     // return <Main actions={actions}/>;
+
+    return this.returnAuthenticatedApp();
+    
+  }
+
+  returnLoginScreen() {
+    return (<Login/>)
+  }
+
+  returnAuthenticatedApp() {
     return (
       <div className="off-canvas-wrapper">
         <div id="base-container">

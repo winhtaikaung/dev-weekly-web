@@ -6,36 +6,56 @@ import SocialLogin from '../../components/login/SocialLogin'
 import SignUp from '../../components/login/SignUp'
 import SignIn from '../../components/login/SignIn'
 class Login extends Component {
-    constructor(props) {
-        super(props)
+    constructor(props,context) {
+        super(props,context);
+        
     }
 
     onLazyScrollto(id) {
-        document.querySelector(id).scrollIntoView({ 
-            behavior: 'smooth' 
-        });
+        document
+            .querySelector(id)
+            .scrollIntoView({behavior: 'smooth'});
     }
+
+    onFacebookLoginClick() {
+        
+    }
+
+    onGoogleLoginClick() {
+        
+    }
+
     render() {
         return (
             <div className="row">
                 <div className="login-box small-12 medium-12 large-12 ">
                     <div className="row">
                         <SocialLogin
+                            onFacebookLogin={this
+                            .onFacebookLoginClick
+                            .bind(this)}
+                            onGoogleLogin={this
+                            .onGoogleLoginClick
+                            .bind(this)}
                             lazyScrollto={this
                             .onLazyScrollto
-                            .bind(this)} />
+                            .bind(this)}/>
                     </div>
                     <div className="row align-center">
                         <SignUp/>
                     </div>
                     <div className="row align-center">
-                        <SignIn/>
+                        <SignIn />
                     </div>
                 </div>
             </div>
         )
     }
 }
+
+Login.contextTypes = {
+    router: React.PropTypes.object.isRequired
+};
 
 function mapStateToProps(state) { // eslint-disable-line no-unused-vars
     /* Populated by react-webpack-redux:reducers */
