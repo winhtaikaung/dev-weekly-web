@@ -76,8 +76,13 @@ export class RewardList extends React.Component {
                 );
             } else {
                 return (
-                    <div className="row">
-                        No Items Found
+                    <div className="row align-center">
+                        <div
+                            data-closable
+                            className="medium-4 large-4 small-8 callout alert-callout-border warning">
+                            <strong>Caution</strong>
+                            &nbsp;No Items Found
+                        </div>
                     </div>
                 )
             }
@@ -97,4 +102,4 @@ function mapDispatchToProps(dispatch) {
     }, dispatch);
 }
 
-export default connect(state => ({items: state.MerchantListReducer.items, paging: state.MerchantListReducer.paging}), mapDispatchToProps)(RewardList);
+export default connect(state => ({items: state.RewardListReducer.items, paging: state.RewardListReducer.paging}), mapDispatchToProps)(RewardList);

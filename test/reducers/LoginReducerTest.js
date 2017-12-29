@@ -5,7 +5,9 @@ describe('LoginRecuerTest', () => {
         const initialState = Object.freeze({
             isFetching: false, loginResponse:null,token:null
         });
+	
+	var emailReducer = EmailLoginReducer(initialState,{}) 
 
-        expect(EmailLoginReducer(initialState, {})).toEqual(initialState);
+        expect(emailReducer).toEqual(initialState);
     });
 });
