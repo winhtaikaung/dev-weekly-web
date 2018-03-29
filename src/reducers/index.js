@@ -13,7 +13,7 @@ import {routerReducer} from 'react-router-redux';
 import ScratchCardReducer from '../containers/scratchcard/reducers/ScratchCardReducer';
 import RewardListReducer from '../containers/rewardList/reducers/RewardListReducer';
 import MyCardListReducer from '../containers/mycardList/reducers/MyCardListReducer';
-import RewardDetailReducer from '../containers/rewarddetail/reducers/RewardDetailReducer';
+import RewardDetailReducer from '../containers/detail/reducers/RewardDetailReducer';
 import {EmailLoginReducer} from '../containers/login/reducers/LoginReducer';
 const reducers = {
   routing: routerReducer,

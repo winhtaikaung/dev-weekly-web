@@ -36,13 +36,13 @@ class App extends Component {
       navDrawerItems: [
         {
           icon: "http://iconfinder.com/q=demo",
-          text: "User Profile"
+          text: "Reward Detail"
         }, {
           icon: "http://iconfinder.com/q=demo",
-          text: "Link Rapid KL Card"
+          text: "Voucher"
         }, {
           icon: "http://iconfinder.com/q=demo",
-          text: "PromoCode"
+          text: "Scratch Card"
         }, {
           icon: "http://iconfinder.com/q=demo",
           text: "Contact us"
@@ -71,8 +71,27 @@ class App extends Component {
   }
 
   onNavItemClick(index, drawerState) {
+    switch (this.state.modalDialogIndex) {
+      case 0:
+          this.props.router.push("detail")
+          break;
+      case 1:
+          return (
+              {/*<div>PromoCode</div>*/}
+          );
+          break;
+      case 2:
+          return (
+              {/*<div>PromoCode</div>*/}
+          );
+          break;
+      default: break;
+        }
+
     this.setState({isDrawerOpen: drawerState, isModelOpen: true, modelTitle: this.state.navDrawerItems[index].text, modalDialoglIndex: index})
     this.disableBodyOverflow(true);
+
+    
   }
 
   componentWillReceiveProps(nextProps) {
@@ -90,7 +109,7 @@ class App extends Component {
     // return <Main actions={actions}/>;
 
     return this.returnAuthenticatedApp();
-    
+
   }
 
   returnLoginScreen() {
@@ -119,12 +138,12 @@ class App extends Component {
             <div className="view-container">
               {this.props.children}
             </div>
-            <BottomNavBar navItems={this.state.bottomNavitems}/>
+            {/*<BottomNavBar navItems={this.state.bottomNavitems}/>*/}
           </div>
-          <ModalContainer
+{ /*         <ModalContainer
             isModalOpen={this.state.isModelOpen}
             labelTitle={this.state.modelTitle}
-            modalDialoglIndex={this.state.modalDialoglIndex}/>
+modalDialoglIndex={this.state.modalDialoglIndex}/>*/}
         </div>
       </div>
     );

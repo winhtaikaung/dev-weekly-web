@@ -13,8 +13,8 @@ const NavDrawer = (props) => {
                 ></div>
             <div
                 className={`off-canvas mobile-ofc position-left is-transition-push` + `${ !props.isDrawerOpen
-                ? " is-close"
-                : " is-open"}`}
+                ? " is-close drawer-close"
+                : " is-open drawer-open"}`}
                 id="offCanvas"
                 data-off-canvas>
                 <ProfileHeader/>

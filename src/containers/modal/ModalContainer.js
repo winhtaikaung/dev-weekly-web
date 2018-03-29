@@ -47,17 +47,17 @@ class ModalContainer extends Component {
         switch (this.state.modalDialogIndex) {
             case 0:
                 return (
-                    <div>{this.returnUserProfileModal(this.props)}</div>
+                    {/*<div>PromoCode</div>*/}
                 );
                 break;
             case 1:
                 return (
-                    <div>{this.returnLinkCardModal(this.props)}</div>
+                    {/*<div>PromoCode</div>*/}
                 );
                 break;
             case 2:
                 return (
-                    <div>PromoCode</div>
+                    {/*<div>PromoCode</div>*/}
                 );
                 break;
             case 3:
