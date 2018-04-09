@@ -1,4 +1,4 @@
-# Perx PWA-Demo
+# Dev-weekly-Web-Client
 
 One Paragraph of project description goes here
 
